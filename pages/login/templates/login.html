@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block page_body_main_content %}
+    <form action="/login" method="post">
+        <input name="username" placeholder="Username"/>
+        <br/>
+        <input type="submit" name="login_form_submit"/>
+    </form>
+{% endblock %}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('catalog.static', filename='css/catalog.css') }}"/>
+    <script defer src="{{ url_for('catalog.static', filename='js/catalog.js') }}"></script>
+    <script defer src="{{ url_for('about.static', filename='js/about.js') }}"></script>
+</head>
+<body>
+    <h1>Catalog</h1>
+    <a href="/about">About</a>
+    {% extends 'main_menu.html' %}
+    {% block main_nav_links %}
+        <li>catalog lol</li>
+    {% endblock %}
+</body>
+</html>

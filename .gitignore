@@ -1,0 +1,9 @@
+## PYTHON
+/venv
+__pycache__/
+
+## IDE
+.idea
+
+## PROJECT CONFIGS
+#.env

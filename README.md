@@ -30,6 +30,7 @@ Open the project's dir in the terminal and:
 1. Copy the output string
 1. Edit the project's **.env** file found inside the root folder
 1. Overwrite the **SECRET_KEY** value with the string you copied
+<br/>
  
 #### Run:
  Run the project with your IDE's configuration or from the terminal, using the **flask run** command  

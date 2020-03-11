@@ -1,6 +1,4 @@
-{% block page_head_css %}
-    <link rel="stylesheet" href="{{ url_for('main_menu.static', filename='css/main-menu.css') }}"/>
-{% endblock %}
+<link rel="stylesheet" href="{{ url_for('main_menu.static', filename='css/main-menu.css') }}"/>
 
 <li><a href="/">Homepage</a></li>
 <li><a href="{{ url_for('about.index') }}">About</a></li>

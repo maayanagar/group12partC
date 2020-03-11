@@ -18,15 +18,18 @@ flask, lean, skeleton, project, structure, environment, setup, template, fullsta
 ### Instructions:
 
 #### Prerequisite:
-Open the project's dir in the terminal and run **pip install python-dotenv**
+Open the project's dir in the terminal and run the following commands:
+1. pip install virtualenv
+1. virtualenv venv
+1. pip install python-dotenv
 <br/>
 
 #### Configuration:
 Open the project's dir in the terminal and:
-1. Run the command: **python -c 'import os; print(os.urandom(16))'**
+1. Run the command: **python -c "import os; print(os.urandom(16))"**
 1. Copy the output string
 1. Edit the project's **.env** file found inside the root folder
-1. Override the **SECRET_KEY** value with the string you copied
+1. Overwrite the **SECRET_KEY** value with the string you copied
  
 #### Run:
  Run the project with your IDE's configuration or from the terminal, using the **flask run** command  

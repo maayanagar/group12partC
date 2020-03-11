@@ -6,4 +6,4 @@ __pycache__/
 .idea
 
 ## PROJECT CONFIGS
-#.env
+.env

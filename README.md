@@ -33,4 +33,4 @@ Open the project's dir in the terminal and:
 <br/>
  
 #### Run:
- Run the project with your IDE's configuration or from the terminal, using the **flask run** command  
+ Run the project with your IDE's configuration, or from the terminal by using the **flask run** command  

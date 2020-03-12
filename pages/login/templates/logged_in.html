@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% set page_head_title = 'Logged in' %}
+
 {% block page_head_css %}
     <link rel="stylesheet" href="{{ url_for('login.static', filename='css/login.css') }}"/>
 {% endblock %}

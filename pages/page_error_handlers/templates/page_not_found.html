@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% set page_head_title = 'Page not found' %}
+
 {% block page_head_css %}
     <link rel="stylesheet" href="{{ url_for('page_error_handlers.static', filename='css/page_error_handlers.css') }}"/>
     <link rel="stylesheet" href="{{ url_for('page_error_handlers.static', filename='css/page_not_found.css') }}"/>

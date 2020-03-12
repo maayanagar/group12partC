@@ -1,11 +1,14 @@
 {#
-Base page blocks:
-- html
--- page_lang (html lang="en")
+Base page variables:
+- page_lang | default: 'en'
+- page_head_title_brand | default: 'Barak Pinchovski'
+- page_head_title | default: 'Flask skeleton project'
+#}
 
+{#
+Base page blocks:
 - head
 -- page_head
--- page_head_title
 -- page_head_meta
 --- page_head_meta_extra
 -- page_head_css
@@ -24,11 +27,11 @@ Base page blocks:
 -- page_body_js
  #}
 <!DOCTYPE html>
-<html {% block page_lang %}lang="en"{% endblock %}>
+ <html lang="{{ page_lang|default("en", true) }}">
     <head>
     {% block page_head %}
         {# Title #}
-        <title>Group 1 | {% block page_head_title %}Homepage{% endblock %}</title>
+        <title>{{ page_head_title_brand|default('Barak Pinchovski', true) }} | {{ page_head_title|default('Flask skeleton project', true) }}</title>
 
         {# Meta tags #}
         {% block page_head_meta %}
@@ -36,6 +39,7 @@ Base page blocks:
             <meta name="author" content="Barak Pinchovski"/>
             <meta name="description" content="Flask skeleton project as a base to start developing on"/>
             <meta name="keywords" content="flask, lean, skeleton, project, structure, environment, setup, template, fullstack, web, development, app, university, education"/>
+            <link rel="icon" href="{{ url_for('static', filename='img/favicon/flask-favicon.png') }}"/>
             {% block page_head_meta_extra %}{% endblock %}
         {% endblock %}
 

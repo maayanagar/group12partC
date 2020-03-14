@@ -9,7 +9,7 @@ logout = Blueprint('logout', __name__, static_folder='static', static_url_path='
 @logout.route('/logout')
 def index():
     if 'username' in session:
-        session.pop('username')
+        session.pop('username') #session.clear()
         return render_template('logout.html')
     else:
         return redirect(url_for('home.index'))

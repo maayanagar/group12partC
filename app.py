@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask
 
 
 ###### App setup
@@ -22,7 +22,7 @@ app.register_blueprint(catalog)
 from pages.login.login import login
 app.register_blueprint(login)
 
-## Login
+## Logout
 from pages.logout.logout import logout
 app.register_blueprint(logout)
 

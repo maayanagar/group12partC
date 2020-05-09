@@ -1,8 +1,8 @@
 {#
 Base page variables:
-- page_lang | default: 'en'
-- page_head_title_brand | default: 'Barak Pinchovski'
-- page_head_title | default: 'Flask skeleton project'
+-- page_lang | default: 'en'
+-- page_head_title_author | default: 'Barak Pinchovski'
+-- page_head_title | default: 'Flask skeleton project'
 #}
 
 {#
@@ -31,17 +31,20 @@ Base page blocks:
     <head>
     {% block page_head %}
         {# Title #}
-        <title>{{ page_head_title_brand|default('Barak Pinchovski', true) }} | {{ page_head_title|default('Flask skeleton project', true) }}</title>
+        <title>{{ page_head_title_author|default('Barak Pinchovski', true) }} | {{ page_head_title|default('Flask skeleton project', true) }}</title>
 
         {# Meta tags #}
         {% block page_head_meta %}
+            <base href="/"/>
             <meta charset="UTF-8"/>
             <meta name="author" content="Barak Pinchovski"/>
             <meta name="description" content="Flask skeleton project as a base to start developing on"/>
             <meta name="keywords" content="flask, lean, skeleton, project, structure, environment, setup, template, fullstack, web, development, app, university, education"/>
-            <link rel="icon" href="{{ url_for('static', filename='img/favicon/flask-favicon.png') }}"/>
             {% block page_head_meta_extra %}{% endblock %}
         {% endblock %}
+
+        {# favicon #}
+        <link rel="icon" href="{{ url_for('static', filename='img/favicon/flask-favicon.png') }}"/>
 
         {# Base #}
         <base href="/"/>

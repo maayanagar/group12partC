@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, session
-from consts.consts import methods
+from config.consts import methods
 
 
 # login blueprint definition

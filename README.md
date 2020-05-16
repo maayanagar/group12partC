@@ -44,6 +44,46 @@ Open the project's dir in the terminal and:
 
 #### Connecting and querying a database:
 1. Edit **.env** file with your database details
+
+**METHOD 1 - Query the database by using the implemented DBManager module**
+1. A module named **DBManager** exists for querying the database.
+1. On `.py` files you'd like to connect and query the database, use the following import:
+    ```python
+    from utilities.db.db_manager import dbManager
+    ```
+1. Then use one of the methods ```commit(query, args=())```, ```fetch(query, args=())```, ```execute(query, args=())``` to query the database according to the explanation below:
+    1. ```commit(query, args=())```
+    <br/>
+    Use this method for ***INSERT***, ***UPDATE*** and ***DELETE*** queries.
+    <br/>
+    Returns number of affected rows.
+    1. ```fetch(query, args=())```
+    <br/>
+    Use this method for ***SELECT*** queries.
+    <br/>
+    Returns:
+        - The query result as a list of named tuples where fields are accessible with dot notation.
+        Read more about it [here](https://dev.mysql.com/doc/connector-python/en/connector-python-api-mysqlcursor.html).
+        - False if query fails.
+    1. ```execute(query, args=())```
+    <br/>
+    Use this method for ***CREATE...***, ***ALTER...*** and ***DROP...*** queries.
+    <br/>
+    Returns:
+        - True if query is successful.
+        - False if query fails.
+
+   Example:
+   ```python
+   from utilities.db.db_manager import dbManager
+   query_result = dbManager.fetch('SELECT * FROM example_table')
+   if query_result:
+       for record in records:
+           print(record.id) #prints the record's ID 
+   ```
+<br/>
+
+**METHOD 2 - DIY**
 1. On `.py` files you'd like to connect to the database, use the following imports:
     ```python
     from settings import DB

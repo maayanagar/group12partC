@@ -57,6 +57,7 @@ Open the project's dir in the terminal and:
     Use this method for ***INSERT***, ***UPDATE*** and ***DELETE*** queries.
     <br/>
     Returns number of affected rows.
+    
     1. ```fetch(query, args=())```
     <br/>
     Use this method for ***SELECT*** queries.
@@ -65,6 +66,7 @@ Open the project's dir in the terminal and:
         - The query result as a list of named tuples where fields are accessible with dot notation.
         Read more about it [here](https://dev.mysql.com/doc/connector-python/en/connector-python-api-mysqlcursor.html).
         - False if query fails.
+        
     1. ```execute(query, args=())```
     <br/>
     Use this method for ***CREATE...***, ***ALTER...*** and ***DROP...*** queries.

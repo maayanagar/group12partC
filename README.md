@@ -52,28 +52,38 @@ Open the project's dir in the terminal and:
     from utilities.db.db_manager import dbManager
     ```
 1. Then use one of the methods ```commit(query, args=())```, ```fetch(query, args=())```, ```execute(query, args=())``` to query the database according to the explanation below:
-    1. ```commit(query, args=())```
-    <br/>
-    Use this method for ***INSERT***, ***UPDATE*** and ***DELETE*** queries.
-    <br/>
-    Returns number of affected rows.
-    
-    1. ```fetch(query, args=())```
-    <br/>
-    Use this method for ***SELECT*** queries.
-    <br/>
-    Returns:
-        - The query result as a list of named tuples where fields are accessible with dot notation.
-        Read more about it [here](https://dev.mysql.com/doc/connector-python/en/connector-python-api-mysqlcursor.html).
-        - False if query fails.
-        
-    1. ```execute(query, args=())```
-    <br/>
-    Use this method for ***CREATE...***, ***ALTER...*** and ***DROP...*** queries.
-    <br/>
-    Returns:
-        - True if query is successful.
-        - False if query fails.
+    <ul>
+        <li>
+            <code>commit(query, args=())</code>
+            <br/>
+            Use this method for <strong>INSERT</strong>, <strong>UPDATE</strong> and <strong>DELETE</strong> queries.
+            <br/>
+            Returns number of affected rows.
+        </li>
+        <li>
+            <code>fetch(query, args=())</code>
+            <br/>
+            Use this method for <strong>SELECT</strong> queries.
+            <br/>
+            Returns:
+            <br/>
+            - The query result as a list of named tuples where fields are accessible with dot notation.
+            Read more about it <a href="https://dev.mysql.com/doc/connector-python/en/connector-python-api-mysqlcursor.html">here.</a>
+            <br/>
+            - False if query fails.
+        </li>
+        <li>
+            <code>execute(query, args=())</code>
+            <br/>
+            Use this method for <strong>CREATE...</strong>, <strong>ALTER...</strong> and <strong>DROP...</strong> queries.
+            <br/>
+            Returns:
+            <br/>
+            - True if query is successful.
+            <br/>
+            - False if query fails.
+        </li>
+    </ul>
 
    Example:
    ```python

@@ -6,9 +6,9 @@ app = Flask(__name__)
 app.config.from_pyfile('settings.py')
 
 ###### Pages
-## Home
-from pages.home.home import home
-app.register_blueprint(home)
+## Homepage
+from pages.homepage.homepage import homepage
+app.register_blueprint(homepage)
 
 ## About
 from pages.about.about import about

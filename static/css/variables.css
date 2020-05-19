@@ -1,4 +1,12 @@
 :root {
+    /* Colors */
+    --primary-color: #64b0ff;
+    --primary-contrast-color: white;
+
+    /* Fonts */
     --xsite-font-family: Tahoma, serif;
     --xsite-font-size: 16px;
+
+    /* Links */
+    --active-menu-item-color: var(--primary-color);
 }

@@ -1,4 +1,4 @@
-setTimeout(() => { window.location = '/home'; }, 5000);
+setTimeout(() => { window.location = '/'; }, 5000);
 
 setInterval(() => {
     document.querySelector('.count-down').innerHTML =

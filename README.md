@@ -90,7 +90,7 @@ Open the project's dir in the terminal and:
    from utilities.db.db_manager import dbManager
    query_result = dbManager.fetch('SELECT * FROM example_table')
    if query_result:
-       for record in records:
+       for record in query_result:
            print(record.id) #prints the record's ID 
    ```
 <br/>

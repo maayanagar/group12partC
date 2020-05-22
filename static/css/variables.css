@@ -2,6 +2,8 @@
     /* Colors */
     --primary-color: #64b0ff;
     --primary-contrast-color: white;
+    --secondary-color: black;
+    --secondary-contrast-white: white;
 
     /* Fonts */
     --xsite-font-family: Tahoma, serif;
@@ -9,4 +11,7 @@
 
     /* Links */
     --active-menu-item-color: var(--primary-color);
+    --link-color: var(--secondary-color);
+    --active-link-color: var(--primary-color);
+    --visited-link-color: var(--secondary-color);
 }

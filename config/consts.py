@@ -1,1 +1,1 @@
-methods = {'get': 'GET', 'post': 'POST'}
+methods = {'g': 'GET', 'p': 'POST', 'u': 'UPDATE', 'd': 'DELETE'}

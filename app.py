@@ -35,3 +35,9 @@ app.register_blueprint(page_error_handlers)
 ## Main menu
 from components.main_menu.main_menu import main_menu
 app.register_blueprint(main_menu)
+
+
+###### APIs
+## Users API
+from apis.users.users_api import users_api
+app.register_blueprint(users_api)

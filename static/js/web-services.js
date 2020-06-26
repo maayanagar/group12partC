@@ -10,8 +10,8 @@ class WebServices {
     fetchResource(url, method = 'GET') {
         return fetch(url, { method: method })
             .then(response => response.json())
-            .then(jsonResponse => ( this.defaultResponse(true, jsonResponse) ))
-            .catch(error => ( this.defaultResponse(false, [], error.message) ));
+            .then(jsonResponse => ( this.defaultResponse(jsonResponse) ))
+            .catch(error => ( this.defaultResponse(undefined, error.message) ));
     }
 
     /**
@@ -27,8 +27,8 @@ class WebServices {
         return new Promise((resolve, reject) => reject( this.defaultResponse() ));
     }
 
-    defaultResponse(isSuccess = false, response = [], errorMessage = '') {
-        return { success: isSuccess, response: response, error: errorMessage };
+    defaultResponse( response = { success: false, data: [] }, errorMessage = '') {
+        return { ...response, error: errorMessage };
     }
 }
 

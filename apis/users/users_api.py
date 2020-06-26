@@ -3,7 +3,7 @@ from utilities.db.db_manager import dbManager
 from utilities.apis.api_response import json_response
 
 # users_api blueprint definition
-users_api = Blueprint('users_api', __name__, static_folder='static', static_url_path='/users_api', template_folder='templates')
+users_api = Blueprint('users_api', __name__)
 
 
 # APIs

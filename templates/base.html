@@ -35,7 +35,6 @@ Base page blocks:
 
         {# Meta tags #}
         {% block page_head_meta %}
-            <base href="/"/>
             <meta charset="UTF-8"/>
             <meta name="author" content="Barak Pinchovski"/>
             <meta name="description" content="Flask skeleton project as a base to start developing on"/>
@@ -98,6 +97,7 @@ Base page blocks:
         {% endblock %}
 
         {# JS #}
+        <script src="{{ url_for('static', filename='js/web-services.js') }}"></script>
         <script src="{{ url_for('static', filename='js/base.js') }}"></script>
         {% block page_body_js %}{% endblock %}
     </body>

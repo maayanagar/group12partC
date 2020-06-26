@@ -26,6 +26,10 @@ app.register_blueprint(login)
 from pages.logout.logout import logout
 app.register_blueprint(logout)
 
+## Profile
+from pages.profile.profile import profile
+app.register_blueprint(profile)
+
 ## Page error handlers
 from pages.page_error_handlers.page_error_handlers import page_error_handlers
 app.register_blueprint(page_error_handlers)

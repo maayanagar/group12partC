@@ -14,10 +14,10 @@ document.addEventListener("DOMContentLoaded", function () {
             // user exist
             if (user.role === "admin") {
                 // send the user to the admin's page
-                window.location.href = "8_admin.html";
+                window.location.href = "/admin";
             } else {
                 // send the user to user's account page
-                window.location.href = "10_myAccount.html";
+                window.location.href = "/myAccount";
             }
         } else {
             // user not exist or incorrect password

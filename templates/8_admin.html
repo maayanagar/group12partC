@@ -1,35 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I-Tennis: Admin</title>
-    <link rel="stylesheet" href="../static/css/styles.css">
-</head>
-<body>
-<div class="tennis-background-pages-image"></div>
-<div class="tennis-logo-pages"></div>
-<a href="1_homePage.html">
-    <div class="tennis-home-icon"></div>
-</a>
-<h1 class="main-title">Admin</h1>
-<div class="container-small">
-    <div class="square-small" id="square3">
-        <a href="12_removeSession.html"><h1 class="square-small-text ">הסר אימון מהמערכת</h1></a>
-    </div>
-    <div class="square-small" id="square4">
-        <a href="11_addSession.html"><h1 class="square-small-text ">הוסף אימון למערכת</h1></a>
-    </div>
-    <div class="square-small" id="square5">
-        <h1 class="square-small-text ">עדכון אימון אישי</h1>
-    </div>
-    <div class="square-small" id="square6">
-        <a href="4_Schedule.html"><h1 class="square-small-text ">צפייה במערכת</h1></a>
-    </div>
-    <div class="square-small" id="square7">
-        <h1 class="square-small-text ">מעקב תשלומים</h1>
+{% extends 'base.html' %}
+
+{% set page_head_title = 'I-Tennis: Admin' %}
+{% set page_main_title = 'Admin' %}
+
+{% block page_body_content %}
+    <div class="container-small">
+        <div class="square-small" id="square3">
+            <a href="/removeSession"><h1 class="square-small-text ">הסר אימון מהמערכת</h1></a>
+        </div>
+        <div class="square-small" id="square4">
+            <a href="/addSession"><h1 class="square-small-text ">הוסף אימון למערכת</h1></a>
+        </div>
+        <div class="square-small" id="square5">
+            <h1 class="square-small-text ">עדכון אימון אישי</h1>
+        </div>
+        <div class="square-small" id="square6">
+            <a href="/schedule"><h1 class="square-small-text ">צפייה במערכת</h1></a>
+        </div>
+        <div class="square-small" id="square7">
+            <h1 class="square-small-text ">מעקב תשלומים</h1>
+        </div>
     </div>
 
-</div>
-</body>
-</html>
+{% endblock %}

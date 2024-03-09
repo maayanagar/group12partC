@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
         setTimeout(function () {
             button.disabled = false; // release the button after the process is simulated
             alert('הרשמתך בוצעה בהצלחה!'); // show notification to the user
-            window.location.href = "10_myAccount.html";
+            window.location.href = "/myAccount";
         }, 1000);
     });
 });

@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
         users.push(userData);
         localStorage.setItem('users', JSON.stringify(users));
         alert('המנוי נוסף למערכת בהצלחה!'); //show notification to the user
-        window.location.href = "10_myAccount.html";
+        window.location.href = "/myAccount";
     }
 
     function validatePhone(phone) {

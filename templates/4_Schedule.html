@@ -1,28 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I-Tennis: Schedule</title>
-    <link rel="stylesheet" href="../static/css/styles.css">
-</head>
-<body>
-<div class="tennis-background-pages-image"></div>
-<div class="tennis-logo-pages"></div>
-<a href="1_homePage.html">
-    <div class="tennis-home-icon"></div>
-</a>
-<h1 class="main-title">מערכת שעות</h1>
-<div class="schedule-wrapper">
-    <div class="schedule-container">
-        <!-- reads from js_miniDataBase.js -->
+{% extends 'base.html' %}
 
+{% set page_head_title = 'I-Tennis: Schedule' %}
+{% set page_main_title = 'מערכת שעות' %}
+
+
+{% block page_body_content %}
+    <div class="schedule-wrapper">
+        <div class="schedule-container">
+            <!-- reads from js_miniDataBase.js -->
+
+        </div>
+        <button>הירשם</button>
     </div>
-    <button>הירשם</button>
-</div>
-
-<script src="../static/js/js_showScheduleSessions.js"></script>
-<script src="../static/js/js_miniDataBase.js"></script>
-<script src="../static/js/js_selectSession.js"></script>
-</body>
-</html>
+    {% block page_body_js %}
+        <script src="{{ url_for('static', filename='js/js_showScheduleSessions.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/js_miniDataBase.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/js_selectSession.js') }}"></script>
+    {% endblock %}
+{% endblock %}

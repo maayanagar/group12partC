@@ -5,27 +5,29 @@
 {% block page_head_css %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style_homepage.css') }}"/>
 {% endblock %}
+{% block page_body_uniform %}
 
-{% block page_body_content %}
-    <img src="../static/media/img/istock_000062879576_double.jpg" alt="tennis image" class="tennis-banner">
-    <div class="tennis-logo"></div>
-    <img src="../static/media/img/line.png" alt="Descriptive text for the image" class="tennis-line-1">
-    <img src="../static/media/img/line.png" alt="Descriptive text for the image" class="tennis-line-2">
-    <div class="tennis-content">
-        <ul class="tennis-menu">
-            <a href="2_clubsDetails.html">
-                <li>פרטים על המועדון</li>
-            </a>
-            <a href="3_loginPage.html">
-                <li>כניסה לחשבון</li>
-            </a>
-            <a href="../pages/subscribe/templates/9_subscribe.html">
-                <li>רכישת מנוי</li>
-            </a>
-            <a href="6_contactMe.html">
-                <li>צור קשר</li>
-            </a>
-        </ul>
-    </div>
+    {% block page_body_content %}
+        <img src="../static/media/img/istock_000062879576_double.jpg" alt="tennis image" class="tennis-banner">
+        <div class="tennis-logo"></div>
+        <img src="../static/media/img/line.png" alt="Descriptive text for the image" class="tennis-line-1">
+        <img src="../static/media/img/line.png" alt="Descriptive text for the image" class="tennis-line-2">
+        <div class="tennis-content">
+            <ul class="tennis-menu">
+                <a href="/clubsDetails">
+                    <li>פרטים על המועדון</li>
+                </a>
+                <a href="/loginPage">
+                    <li>כניסה לחשבון</li>
+                </a>
+                <a href="/subscribe">
+                    <li>רכישת מנוי</li>
+                </a>
+                <a href="/contactMe">
+                    <li>צור קשר</li>
+                </a>
+            </ul>
+        </div>
+    {% endblock %}
 {% endblock %}
 

@@ -1,30 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I-Tennis: login page</title>
-    <link rel="stylesheet" href="../static/css/styles.css">
-</head>
-<body>
-<div class="tennis-background-pages-image"></div>
-<div class="tennis-logo-pages"></div>
-<a href="1_homePage.html">
-    <div class="tennis-home-icon"></div>
-</a>
-<h1 class="main-title">כניסה לחשבון</h1>
-<div class="container">
-    <div class="square" id="square1">
-        <form class="square-text-form" action="10_myAccount.html">
-            <label for="username" class="form-label">שם משתמש:</label>
-            <input type="text" id="username" name="username" class="form-input" required><br>
-            <label for="password" class="form-label">סיסמה:</label>
-            <input type="password" id="password" name="password" class="form-input" required>
-            <input type="submit" value="התחבר" class="form-submit">
-        </form>
+{% extends 'base.html' %}
+
+{% set page_head_title = 'I-Tennis: login page' %}
+{% set page_main_title = 'כניסה לחשבון' %}
+
+
+{% block page_body_content %}
+    <div class="container">
+        <div class="square" id="square1">
+            <form class="square-text-form" action="/myAccount">
+                <label for="username" class="form-label">שם משתמש:</label>
+                <input type="text" id="username" name="username" class="form-input" required><br>
+                <label for="password" class="form-label">סיסמה:</label>
+                <input type="password" id="password" name="password" class="form-input" required>
+                <input type="submit" value="התחבר" class="form-submit">
+            </form>
+        </div>
     </div>
-</div>
-<script src="../static/js/js_miniDataBase.js"></script>
-<script src="../static/js/js_loginValidation.js"></script>
-</body>
-</html>
+    {% block page_body_js %}
+        <script src="{{ url_for('static', filename='js/js_miniDataBase.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/js_loginValidation.js') }}"></script>
+    {% endblock %}
+{% endblock %}

@@ -1,41 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I-Tennis: Club's details</title>
-    <link rel="stylesheet" href="../static/css/styles.css">
-</head>
-<body>
-<div class="tennis-background-pages-image"></div>
-<div class="tennis-logo-pages"></div>
-<a href="1_homePage.html">
-    <div class="tennis-home-icon"></div>
-</a>
-<h1 class="main-title">פרטים על המועדון</h1>
-<div class="container">
-    <div class="square" id="square1">
-        <h1 class="square-text">כרטיסייה</h1>
-        <h2 class="square-text">סוגי האימונים המוצעים:</h2>
-        <ul class="square-text-list">
-            <li>אימון זוגות</li>
-            <li>אימון קבוצה פתוחה</li>
-            <li>אימון קבוצה סגורה</li>
-        </ul>
-        <h4>עלות: 1,000 ש"ח <br> הגבלת שימוש למשך 3 חודשים</h4>
+{% extends 'base.html' %}
+
+{% set page_head_title = 'I-Tennis: Clubs details' %}
+{% set page_main_title = 'פרטים על המועדון' %}
+
+{% block page_body_content %}
+    <div class="container">
+        <div class="square" id="square1">
+            <h1 class="square-text">כרטיסייה</h1>
+            <h2 class="square-text">סוגי האימונים המוצעים:</h2>
+            <ul class="square-text-list">
+                <li>אימון זוגות</li>
+                <li>אימון קבוצה פתוחה</li>
+                <li>אימון קבוצה סגורה</li>
+            </ul>
+            <h4>עלות: 1,000 ש"ח <br> הגבלת שימוש למשך 3 חודשים</h4>
+        </div>
+        <div class="square" id="square2">
+            <h1 class="square-text">מנוי שנתי</h1>
+            <h2 class="square-text">סוגי האימונים המוצעים:</h2>
+            <ul class="square-text-list">
+                <li>אימון אישי</li>
+                <li>אימון זוגות</li>
+                <li>אימון קבוצה פתוחה</li>
+                <li>אימון קבוצה סגורה</li>
+                <li>הזמנת מגרש</li>
+            </ul>
+            <h4>עלות: 8,000 ש"ח <br> הגבלת שימוש למשך שנה</h4>
+        </div>
     </div>
-    <div class="square" id="square2">
-        <h1 class="square-text">מנוי שנתי</h1>
-        <h2 class="square-text">סוגי האימונים המוצעים:</h2>
-        <ul class="square-text-list">
-            <li>אימון אישי</li>
-            <li>אימון זוגות</li>
-            <li>אימון קבוצה פתוחה</li>
-            <li>אימון קבוצה סגורה</li>
-            <li>הזמנת מגרש</li>
-        </ul>
-        <h4>עלות: 8,000 ש"ח <br> הגבלת שימוש למשך שנה</h4>
-    </div>
-</div>
-</body>
-</html>
+{% endblock %}
+
+

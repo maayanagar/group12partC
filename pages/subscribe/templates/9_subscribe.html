@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I-Tennis: Subscribe</title>
+    <link rel="stylesheet" href="../../../static/css/styles.css">
+</head>
+<body>
+<div class="tennis-background-pages-image"></div>
+<div class="tennis-logo-pages"></div>
+<a href="../../../templates/1_homePage.html">
+    <div class="tennis-home-icon"></div>
+</a>
+<h1 class="main-title">רכישת מנוי</h1>
+<div class="container">
+    <div class="square" id="square1">
+        <form class="square-text-form2" id="registrationForm" novalidate>
+            <h2>סוג המנוי:
+                <input type="radio" id="membership" name="subscription-type" value="membership" class="form-input-radio"
+                       checked/>
+                <label for="membership" class="form-label-radio">מנוי</label>
+                <input type="radio" id="ticket" name="subscription-type" value="ticket" class="form-input-radio"/>
+                <label for="ticket" class="form-label-radio">כרטיסייה</label>
+            </h2>
+            <br>
+            <label for="firstName" class="form-label">שם מלא: </label>
+            <input type="text" id="firstName" name="firstName" class="form-input" required pattern="[a-zA-Zא-ת ]+"
+                   title="Only letters and spaces are allowed">
+            <br>
+            <label for="phone" class="form-label">טלפון:</label>
+            <input type="tel" id="phone" name="phone" class="form-input" required pattern="0\d{9}"
+                   title="Phone number must be 10 digits and start with '0'">
+            <br>
+            <label for="email" class="form-label">כתובת מייל:</label>
+            <input type="email" id="email" name="email" class="form-input" required>
+            <br>
+            <label for="password" class="form-label">סיסמה:</label>
+            <input type="password" id="password" name="password" class="form-input" required minlength="6">
+            <br>
+            <label for="age" class="form-label">גיל:</label>
+            <input type="number" id="age" name="age" class="form-input-small" required min="10" max="100">
+            <label for="gender" class="form-label">מין:</label>
+            <select id="gender" name="gender" class="form-input-small" required>
+                <option value="">בחר...</option>
+                <option value="male">זכר</option>
+                <option value="female">נקבה</option>
+                <option value="other">אחר</option>
+            </select>
+            <br>
+            <label for="creditCard" class="form-label">כרטיס אשראי:</label>
+            <input type="text" id="creditCard" name="creditCard" class="form-input" required pattern="\d{16}"
+                   title="Credit card number must be 16 digits">
+            <br>
+            <label for="id" class="form-label">תעודת זהות:</label>
+            <input type="text" id="id" name="id" class="form-input" required pattern="\d{9}"
+                   title="ID must be 9 digits">
+            <br>
+            <label for="exp" class="form-label">תוקף:</label>
+            <input type="month" id="exp" name="exp" class="form-input-small" required>
+            <label for="cvv" class="form-label">CVV:</label>
+            <input type="text" id="cvv" name="cvv" class="form-input-small" required pattern="\d{3}"
+                   title="CVV must be 3 digits">
+            <br>
+            <input type="submit" value="רכישה" class="form-submit">
+        </form>
+    </div>
+</div>
+<script src="../static/js/js_subscriptionFormValidations.js"></script>
+</body>
+</html>

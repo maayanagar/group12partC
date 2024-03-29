@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'I-Tennis: My Account' %}
+{% set page_main_title = 'החשבון שלי' %}
+
+{% block page_body_content %}
+    {% if success_message %}
+        <div class="alert alert-success">
+            {{ success_message }}
+        </div>
+    {% endif %}
+
+    <div class="container-small-account ">
+        <div class="square-small-account" id="square8">
+            <a href="/schedule"><h1 class="square-small-text ">מערכת שעות</h1></a>
+        </div>
+        <div class="square-small-account" id="square9">
+            <a href="/scheduleCourt"><h1 class="square-small-text ">הזמנת מגרש</h1></a>
+        </div>
+        <div class="square-small-account" id="square10">
+            <a href="/history"><h1 class="square-small-text ">היסטוריית אימונים</h1></a>
+        </div>
+    </div>
+
+{% endblock %}

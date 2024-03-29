@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'I-Tennis: Remove session' %}
+{% set page_main_title = 'הסרה מהמערכת' %}
+
+{% block page_body_content %}
+    <div class="container">
+        <div class="square" id="square12">
+            <form class="square-text-form" action="12_removeSession.html" id="sessionReductionForm">
+                <label for="sessionSelect" class="form-label">בחר אימון: </label>
+                <select id="sessionSelect" class="form-input">
+                    <option value="">בחר</option>
+                </select><br>
+                <input type="submit" value="הסר" class="form-submit">
+            </form>
+        </div>
+    </div>
+
+    {% block page_body_js %}
+        <script src="{{ url_for('addSession.static', filename='js/js_showSessionsForAdmin.js') }}"></script>
+    {% endblock %}
+{% endblock %}

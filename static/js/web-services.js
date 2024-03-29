@@ -4,7 +4,7 @@ class WebServices {
     /**
      * This method wraps Fetch API for simplifying it
      * @param url: string - Requested resource URL
-     * @param method: string - Method name, default value is GET
+     * @param method: string - Method name, default value js GET
      * @returns {Promise<{success: boolean, response: any, error: string} | {success: boolean, response: [], error: *}>}
      */
     fetchResource(url, method = 'GET') {
@@ -27,9 +27,9 @@ class WebServices {
         return new Promise((resolve, reject) => reject( this.defaultResponse() ));
     }
 
-    defaultResponse( response = { success: false, data: [] }, errorMessage = '') {
+   /** defaultResponse( response = { success: false, data: [] }, errorMessage = '') {
         return { ...response, error: errorMessage };
-    }
+    }*/
 }
 
 const ws = new WebServices();

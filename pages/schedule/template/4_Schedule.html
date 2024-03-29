@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'I-Tennis: schedule' %}
+{% set page_main_title = 'מערכת שעות' %}
+
+
+{% block page_body_content %}
+    <div class="schedule-wrapper">
+        <div class="schedule-container">
+            <!-- reads from js_miniDataBase.js -->
+
+        </div>
+        <button>הירשם</button>
+    </div>
+    {% block page_body_js %}
+        <script src="{{ url_for('schedule.static', filename='js/js_showScheduleSessions.js') }}"></script>
+        <script src="{{ url_for('schedule.static', filename='js/js_selectSession.js') }}"></script>
+    {% endblock %}
+{% endblock %}

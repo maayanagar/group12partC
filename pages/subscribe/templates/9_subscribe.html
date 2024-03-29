@@ -4,13 +4,19 @@
 {% set page_main_title = 'רכישת מנוי' %}
 
 {% block page_body_content %}
+    {% if error_message %}
+        <div class="alert alert-danger">
+            {{ error_message }}
+        </div>
+    {% endif %}
+
     <div class="container">
         <div class="square" id="square1">
-            <form class="square-text-form2" id="registrationForm" novalidate>
+            <form class="square-text-form2" id="registrationForm" novalidate method="post"
+                  action="{{ url_for('subscribe.subscribe_post') }}">
                 <h2>סוג המנוי:
                     <input type="radio" id="membership" name="subscription-type" value="membership"
-                           class="form-input-radio"
-                           checked/>
+                           class="form-input-radio" checked/>
                     <label for="membership" class="form-label-radio">מנוי</label>
                     <input type="radio" id="ticket" name="subscription-type" value="ticket" class="form-input-radio"/>
                     <label for="ticket" class="form-label-radio">כרטיסייה</label>

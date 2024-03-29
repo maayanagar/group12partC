@@ -2,10 +2,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const registrationForm = document.getElementById('registrationForm');
 
     registrationForm.addEventListener('submit', function (event) {
-        event.preventDefault();
-
         let errorMessage = '';
 
+        // Collect user data
         const userData = {
             subscriptionType: document.querySelector('input[name="subscription-type"]:checked') ? document.querySelector('input[name="subscription-type"]:checked').value : '',
             firstName: document.getElementById('firstName').value,
@@ -20,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
             cvv: document.getElementById('cvv').value
         };
 
-        // validations
+        // Perform client-side validation
         if (!validatePhone(userData.phone)) {
             errorMessage += 'Invalid phone number. Phone number must be 10 digits and start with \'0\'.\n';
         }
@@ -38,26 +37,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (errorMessage.length > 0) {
+            event.preventDefault(); // Stop the form from submitting
             alert('Please correct the following errors:\n' + errorMessage);
-        } else {
-            saveUser(userData);
         }
     });
-
-    function saveUser(userData) {
-        const users = JSON.parse(localStorage.getItem('users')) || [];
-        const existingUserIndex = users.findIndex(user => user.email === userData.email);
-
-        if (existingUserIndex !== -1) {
-            alert('המשתמש קיים במערכת!'); //show notification to the user
-            return;
-        }
-
-        users.push(userData);
-        localStorage.setItem('users', JSON.stringify(users));
-        alert('המנוי נוסף למערכת בהצלחה!'); //show notification to the user
-        window.location.href = "/myAccount";
-    }
 
     function validatePhone(phone) {
         return /^0\d{9}$/.test(phone);

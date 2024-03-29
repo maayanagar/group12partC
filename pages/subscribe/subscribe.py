@@ -43,7 +43,18 @@ def subscribe_post():
         'expiration_date': expiration_date,
         'cvv': cvv,
     }
+
+    new_user2 = {
+        'UserID': id,
+        'Name': first_name,
+        'Age': age,
+        'Phone': phone_number,
+        'Email': email,
+        'Password': password,  # Make sure to hash passwords in a real application!
+        'Role': "Customer",
+    }
     add_new_user(new_user)
+    add_new_user2(new_user2)
     # For a successful registration, directly render the myAccount page template
     # or set a success message in session to show on the redirected page
-    return render_template('10_myAccount.html', success_message='Wellcome to your I-Tennis account.')
+    return render_template('10_myAccount.html', success_message='Wellcome to your I-Tennis account')

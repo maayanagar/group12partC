@@ -19,15 +19,20 @@ members_col = iTennis_DB['members']
 # All database's functions
 
 
-def add_new_user(user):
-    members_col.insert_one(user)
+def add_new_member(member):
+    members_col.insert_one(member)
 
-def add_new_user2(user):
+
+def add_new_user(user):
     users_col.insert_one(user)
+
 
 def find_user_by_email(email):
     return members_col.find_one({'email': email})
 
+
+def find_user_by_email_users(email):
+    return users_col.find_one({'Email': email})
 
 
 

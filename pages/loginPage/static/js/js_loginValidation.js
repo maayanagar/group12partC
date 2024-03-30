@@ -2,17 +2,24 @@ document.addEventListener("DOMContentLoaded", function () {
     const loginForm = document.querySelector(".square-text-form");
 
     loginForm.addEventListener("submit", function (event) {
-        event.preventDefault();
 
-        const username = document.getElementById("username").value;
+
+        const userData = {
+            username: document.getElementById("username").value,
+            password: document.getElementById("password").value
+        }
+       /* const username = document.getElementById("username").value;
         const password = document.getElementById("password").value;
 
         // check if user exist
         const user = users.find(user => user.username === username && user.password === password);
+*/
+        if (userData.username.length < 1 || userData.password.length < 1) {
+            event.preventDefault();
+            alert("Fill all the fields");
 
-        if (user) {
-            // user exist
-            if (user.role === "admin") {
+           /*
+           if (userData.role === "admin") {
                 // send the user to the admin's page
                 window.location.href = "/admin";
             } else {
@@ -21,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         } else {
             // user not exist or incorrect password
-            alert("שם משתמש או סיסמה שגויים");
+            alert("שם משתמש או סיסמה שגויים");*/
         }
     });
 });

@@ -10,22 +10,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const dateHeader = document.createElement("div");
         dateHeader.classList.add("date-header");
-        dateHeader.textContent = day; // static
+        dateHeader.textContent = day; // static header
         dayColumn.appendChild(dateHeader);
 
         scheduleContainer.appendChild(dayColumn);
     });
 
-    sessions.forEach(session => {
-        // find the day column that matches the session day
+    courts.forEach(court => {
+        // find the day column that matches the court day
         const dayColumn = Array.from(scheduleContainer.querySelectorAll('.day-column'))
-            .find(column => column.dataset.day === session.day);
+            .find(column => column.dataset.day === court.day);
 
-        // create a div for the session
-        const sessionDiv = document.createElement("div");
-        sessionDiv.classList.add("session");
-        sessionDiv.id = session.id;
-        sessionDiv.innerHTML = `${session.type}<br>${session.time}`;
-        dayColumn.appendChild(sessionDiv);
+        // create a div for the court
+        const courtDiv = document.createElement("div");
+        courtDiv.classList.add("session");
+        courtDiv.id = court.id;
+        courtDiv.innerHTML = `${court.type}<br>${court.time}`;
+        dayColumn.appendChild(courtDiv);
     });
 });

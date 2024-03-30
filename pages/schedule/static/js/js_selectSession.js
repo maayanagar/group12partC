@@ -1,38 +1,23 @@
 document.addEventListener("DOMContentLoaded", function () {
     const sessions = document.querySelectorAll('.session');
-    const button = document.querySelector('button');
+    const form = document.getElementById('sessionForm');
+    const selectedSessionIdInput = document.getElementById('selectedSessionId');
 
     sessions.forEach(function (session) {
         session.addEventListener('click', function () {
-            if (session.classList.contains('session-clicked')) {
-                // double click to unselect the session
-                session.classList.remove('session-clicked');
-            } else {
-                // select the session
-                sessions.forEach(function (otherSession) {
-                    otherSession.classList.remove('session-clicked');
-                });
-                session.classList.add('session-clicked');
-            }
+            sessions.forEach(s => s.classList.remove('session-clicked'));
+            session.classList.add('session-clicked');
+            selectedSessionIdInput.value = session.id;  // Update the hidden input with the session id
         });
     });
 
-    button.addEventListener('click', function (e) {
-        // check if any session js selected
+    form.addEventListener('submit', function (e) {
         const selectedSession = document.querySelector('.session.session-clicked');
         if (!selectedSession) {
-            e.preventDefault(); // stop the button's default action
-            alert('אנא בחר אימון או מגרש לפני ההרשמה!');
-            button.disabled = false; // release the button so the user can try again
-            return;
+            e.preventDefault();  // Prevent form submission
+            alert('אנא בחר אימון לפני ההרשמה!');
+        } else {
+            // The form will submit, and the server will handle the booking
         }
-        button.disabled = true; // lock the button to prevent multiple clicks
-
-        // timeout
-        setTimeout(function () {
-            button.disabled = false; // release the button after the process js simulated
-            alert('הרשמתך בוצעה בהצלחה!'); // show notification to the user
-            window.location.href = "/myAccount";
-        }, 1000);
     });
 });

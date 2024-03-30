@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'I-Tennis: schedule' %}
+{% set page_main_title = 'מערכת שעות' %}
+
+{% block page_body_content %}
+    <div class="schedule-wrapper">
+        <form id="sessionForm" action="{{ url_for('schedule.book_session') }}" method="post">
+            <div class="schedule-container">
+                {% for day in sorted_days %}
+                    <div class="day-column">
+                        <div class="date-header">{{ day }}</div>
+                        {% for session in schedule_by_day[day] %}
+                            <div class="session" id="{{ session._id }}" data-status="{{ session.status }}">
+                                {{ session.type }}<br>{{ session.time }}<br>{{ session.status }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+            <input type="hidden" name="sessionId" id="selectedSessionId">
+            <button type="submit">הירשם</button>
+        </form>
+    </div>
+    {% if request.args.get('message') %}
+        <script type="text/javascript">
+            alert("{{ request.args.get('message') }}");
+        </script>
+    {% endif %}
+    {% block page_body_js %}
+        <script src="{{ url_for('schedule.static', filename='js/js_selectSession.js') }}"></script>
+    {% endblock %}
+{% endblock %}

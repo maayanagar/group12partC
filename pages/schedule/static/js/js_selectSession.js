@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
         session.addEventListener('click', function () {
             sessions.forEach(s => s.classList.remove('session-clicked'));
             session.classList.add('session-clicked');
-            selectedSessionIdInput.value = session.id;  // Update the hidden input with the session id
+            selectedSessionIdInput.value = session.id;
         });
     });
 

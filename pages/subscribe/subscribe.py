@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, url_for, session, redirect
+from flask import Blueprint, render_template, request, url_for, redirect
 from utilities.db.mongoDB import *
 
 subscribe = Blueprint('subscribe', __name__, static_folder='static', static_url_path='/subscribe', template_folder='templates')
@@ -6,7 +6,6 @@ subscribe = Blueprint('subscribe', __name__, static_folder='static', static_url_
 
 @subscribe.route('/subscribe', methods=['GET'])
 def subscribe_get():
-    # Check if there's an error message in the session
     return render_template('9_subscribe.html')
 
 
@@ -25,7 +24,6 @@ def subscribe_post():
     cvv = request.form.get('cvv')
 
     if find_user_by_email(email):
-        # Instead of using flash, directly set an error message in the session
         message = 'כתובת המייל קיימת במערכת'
         return redirect(url_for('subscribe.subscribe_get', message=message))
 
@@ -49,11 +47,9 @@ def subscribe_post():
         'Age': age,
         'Phone': phone_number,
         'Email': email,
-        'Password': password,  # Make sure to hash passwords in a real application!
+        'Password': password,
         'Role': "Customer",
     }
     add_new_member(new_user)
     add_new_user(new_user2)
-    # For a successful registration, directly render the myAccount page templates
-    # or set a success message in session to show on the redirected page
     return render_template('10_myAccount.html', success_message='Wellcome to your I-Tennis account')

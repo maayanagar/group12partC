@@ -35,7 +35,6 @@ def get_training_sessions():
     return list(trainingSessions_col.find({}))
 
 def check_and_book_session(session_id):
-    # Assume session_id is a string; if it's an ObjectId, convert it accordingly
     session = trainingSessions_col.find_one({'_id': ObjectId(session_id)})
     if session and session.get('status') != 'occupied':
         result = trainingSessions_col.update_one({'_id': ObjectId(session_id)}, {'$set': {'status': 'occupied'}})

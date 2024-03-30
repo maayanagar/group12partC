@@ -57,6 +57,7 @@ app.register_blueprint(removeSession)
 
 
 
+
 ###### Components
 ## Main menu
 # from components.main_menu.main_menu import main_menu

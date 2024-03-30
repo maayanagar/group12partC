@@ -63,6 +63,11 @@
                 <input type="submit" value="רכישה" class="form-submit">
             </form>
         </div>
+        {% if request.args.get('message') %}
+            <script type="text/javascript">
+                alert("{{ request.args.get('message') }}");
+            </script>
+        {% endif %}
     </div>
 
     {% block page_body_js %}

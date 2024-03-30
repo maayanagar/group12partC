@@ -4,6 +4,9 @@
 {% set page_main_title = 'מערכת שעות' %}
 
 {% block page_body_content %}
+    <a href="/myAccount">
+        <div class="back-button">חזור</div>
+    </a>
     <div class="schedule-wrapper">
         <form id="sessionForm" action="{{ url_for('schedule.book_session') }}" method="post">
             <div class="schedule-container">

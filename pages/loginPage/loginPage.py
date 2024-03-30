@@ -7,8 +7,7 @@ loginPage = Blueprint('loginPage', __name__, static_folder='static', static_url_
 
 @loginPage.route('/loginPage', methods=['GET'])
 def loginPage_get():
-    error_message = session.pop('error_message', None)
-    return render_template('3_loginPage.html', error_message=error_message)
+    return render_template('3_loginPage.html')
 
 
 @loginPage.route('/loginPage', methods=['POST'])
@@ -25,8 +24,8 @@ def loginPage_post():
             else:
                 return render_template('8_admin.html', success_message='Welcome to your I-Tennis account')  # Corrected typo
         else:
-            session['error_message'] = 'Password is incorrect'
-            return redirect(url_for('loginPage.loginPage_get'))
+            message = 'הסיסמה שגויה'
+            return redirect(url_for('loginPage.loginPage_get', message=message))
     else:
-        session['error_message'] = 'Username is incorrect'  # Corrected typo
-        return redirect(url_for('loginPage.loginPage_get'))
+        message = 'שם המשתמש לא קיים במערכת'  # Corrected typo
+        return redirect(url_for('loginPage.loginPage_get', message=message))

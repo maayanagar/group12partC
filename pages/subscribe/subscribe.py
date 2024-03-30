@@ -7,8 +7,7 @@ subscribe = Blueprint('subscribe', __name__, static_folder='static', static_url_
 @subscribe.route('/subscribe', methods=['GET'])
 def subscribe_get():
     # Check if there's an error message in the session
-    error_message = session.pop('error_message', None)
-    return render_template('9_subscribe.html', error_message=error_message)
+    return render_template('9_subscribe.html')
 
 
 @subscribe.route('/subscribe', methods=['POST'])
@@ -27,8 +26,8 @@ def subscribe_post():
 
     if find_user_by_email(email):
         # Instead of using flash, directly set an error message in the session
-        session['error_message'] = 'A user with this ID already exists, please select a different one'
-        return redirect(url_for('subscribe.subscribe_get'))
+        message = 'כתובת המייל קיימת במערכת'
+        return redirect(url_for('subscribe.subscribe_get', message=message))
 
     new_user = {
         'subscribtion_type': subscribtion_type,

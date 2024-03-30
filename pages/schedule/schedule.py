@@ -1,10 +1,10 @@
-from flask import Blueprint, render_template, jsonify, session, redirect, url_for, request
+from flask import Blueprint, render_template, redirect, url_for, request
 from utilities.db.mongoDB import *
 
 schedule = Blueprint('schedule', __name__, static_folder='static', static_url_path='/schedule', template_folder='templates')
 
 
-@schedule.route('/schedule')
+@schedule.route('/schedule', methods=['GET'])
 def index():
     sessions_data = get_training_sessions()
     schedule_by_day = {}
@@ -32,11 +32,4 @@ def book_session():
         message = 'האימון תפוס, אנא בחר אימון אחר.'
     return redirect(url_for('schedule.index', message=message))
 
-'''
-@schedule.route('/api/sessions')
-def get_sessions():
-    # Fetch the training sessions from MongoDB
-    sessions = get_training_sessions()
-    # Return the sessions as JSON
-    return jsonify(sessions)
-'''
+

@@ -7,7 +7,7 @@
 {% block page_body_content %}
     <div class="container">
         <div class="square" id="square1">
-            <form class="square-text-form" action="{{ url_for('loginPage.loginPage_post') }}" method="post" >
+            <form class="square-text-form" action="{{ url_for('loginPage.loginPage_post') }}" method="post">
                 <label for="username" class="form-label">שם משתמש:</label>
                 <input type="text" id="username" name="username" class="form-input" required><br>
                 <label for="password" class="form-label">סיסמה:</label>
@@ -15,6 +15,11 @@
                 <input type="submit" value="התחבר" class="form-submit">
             </form>
         </div>
+        {% if request.args.get('message') %}
+            <script type="text/javascript">
+                alert("{{ request.args.get('message') }}");
+            </script>
+        {% endif %}
     </div>
     {% block page_body_js %}
         <script src="{{ url_for('loginPage.static', filename='js/js_loginValidation.js') }}"></script>

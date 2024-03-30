@@ -19,27 +19,20 @@ trainingSessions_col = iTennis_DB['sessionsTrainning']
 
 
 # All database's functions
-
-
 def add_new_member(member):
     members_col.insert_one(member)
-
 
 def add_new_user(user):
     users_col.insert_one(user)
 
-
 def find_user_by_email(email):
     return members_col.find_one({'email': email})
-
 
 def find_user_by_email_users(email):
     return users_col.find_one({'Email': email})
 
-
 def get_training_sessions():
     return list(trainingSessions_col.find({}))
-
 
 def check_and_book_session(session_id):
     # Assume session_id is a string; if it's an ObjectId, convert it accordingly
